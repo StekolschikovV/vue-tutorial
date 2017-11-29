@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.8/vue.min.js"></script>
+
+    <div id="app">
+        <car-list></car-list>
+    </div>
+
+    <script>
+        Vue.component('car-list', {
+            data: function () {
+                return {
+                    models: [{
+                            model: "BMW"
+                        },
+                        {
+                            model: "Opel"
+                        },
+                        {
+                            model: "Nissan"
+                        }
+                    ]
+                }
+            },
+            template: '<ul><li v-for="(item,index) in models">{{item.model}}</li></ul>'
+        })
+
+        new Vue({
+            el: '#app'
+        })
+    </script>
+
+</body>
+
+</html>
